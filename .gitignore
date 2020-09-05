@@ -1,0 +1,16 @@
+# ignore staging and out directory
+staging/*
+out/*
+
+# ignore mk, xfiles and DS_Store
+# mk_*
+xfiles/*
+x_*
+.DS_Store*
+
+# ignore backup and zip files.
+*.backup
+*.zip
+
+# ignore vanced directory
+vanced/*
