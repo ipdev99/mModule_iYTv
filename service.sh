@@ -6,7 +6,6 @@
 ## Requires YouTube to be installed as a user app.
 ## Required YouTube version is 15.33.34
 
-
 # Module directory set by Magisk.
 MODDIR=${0%/*}
 
@@ -38,10 +37,10 @@ if [ ! -f $YTPATH/base.apk ]; then
 elif [ ! $YTVCODE = $RVCODE ]; then
 	echo "$(date '+%Y%m%d_%H%M')" "Wrong version of YouTube found." >>$MODDIR/error.log;
 else
-	# if [ $SDK -ge 27 ]; then
-	# 	su -c mount $MODDIR/base.apk $YTPATH/base.apk;
-	# else
-	# 	su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
-	# fi;
-	su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
+	if [ $SDK -ge 25 ]; then
+		su -c mount $MODDIR/base.apk $YTPATH/base.apk;
+	else
+		su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
+	fi;
+	# su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
 fi;
