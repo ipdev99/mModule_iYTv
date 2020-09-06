@@ -24,9 +24,9 @@ SDK=$(getprop ro.build.version.sdk);
 
 # Find and set YouTube path.
 if [ $SDK -ge 30 ]; then
-	YTPATH=$(readlink -f /data/app/*/com.google.android.youtube*/oat | sed 's/\/oat//g');
+	YTPATH=$(readlink -f /data/app/*/com.google.android.youtube*);
 else
-	YTPATH=$(readlink -f /data/app/com.google.android.youtube*/oat | sed 's/\/oat//g');
+	YTPATH=$(readlink -f /data/app/com.google.android.youtube*);
 fi;
 
 # Find installed (active) YouTube versionCode
@@ -38,5 +38,10 @@ if [ ! -f $YTPATH/base.apk ]; then
 elif [ ! $YTVCODE = $RVCODE ]; then
 	echo "$(date '+%Y%m%d_%H%M')" "Wrong version of YouTube found." >>$MODDIR/error.log;
 else
-	su -c mount $MODDIR/base.apk $YTPATH/base.apk;
+	# if [ $SDK -ge 27 ]; then
+	# 	su -c mount $MODDIR/base.apk $YTPATH/base.apk;
+	# else
+	# 	su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
+	# fi;
+	su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
 fi;
