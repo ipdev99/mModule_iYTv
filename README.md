@@ -3,9 +3,9 @@
 **Magisk Module**  
 _Simple module that uses mount to replace installed regular YouTube with the Vanced version._
 
-### About
-This module will mount Vanced YouTube over the installed regular version.  
-This requires the regular YouTube to be installed as a user app and has to be the same version as Vanced.  
+### Description
+This module will overlay the Vanced apk file over the regular YouTube apk file.  
+Requires regular Google YouTube to be installed as a _user_ app. Both versions need to match.  
 
 ### Download
 Available in the releases tab. [Link](https://github.com/ipdev99/mModule_iYTv/releases)
@@ -17,19 +17,22 @@ Available in the releases tab. [Link](https://github.com/ipdev99/mModule_iYTv/re
 - Select the zip file and install.
 - Reboot device.
 
+### About
+This module is based on the new root install method by the Vanced team.  
+See xda-developers post [Link](https://forum.xda-developers.com/showpost.php?p=83318971&postcount=16371) for information.  
+
 ### To Do
-- Update README.
-- Write up more detailed Instructions. _Including a how to install regular YouTube from APKMirror._
+- Write up more detailed Instructions.
 
 ### Recent changes
-- This README.
+- Fix mounting for backwards compatibility.
 - Some minor cleanup.
 
 ---
 
 ### Requirements to build
-- Linux or MacOS with build (command line) tools installed.
-_aapt cut grep sed zip_
+- Linux or MacOS with build (command line) tools installed.  
+_aapt cut grep sed zip_  
 
 ### How to build
 **If you have git installed**
@@ -43,6 +46,6 @@ _aapt cut grep sed zip_
 
 ### Credits
 - The Android Community and everyone who has helped me learn through the years.
-- Team Vanced [_YouTube Vanced Edition_](https://forum.xda-developers.com/android/apps-games/app-youtube-vanced-edition-t3758757)
+- Team Vanced for [_YouTube Vanced Edition_](https://forum.xda-developers.com/android/apps-games/app-youtube-vanced-edition-t3758757) and the new root install method.
 - John Wu (@topjohnwu) for all things Magisk.
 
