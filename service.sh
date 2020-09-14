@@ -23,9 +23,9 @@ SDK=$(getprop ro.build.version.sdk);
 
 # Find and set YouTube path.
 if [ $SDK -ge 30 ]; then
-	YTPATH=$(readlink -f /data/app/*/com.google.android.youtube*);
+	YTPATH=$(readlink -f /data/app/*/com.google.android.youtube*/lib | sed 's/\/lib//g');
 else
-	YTPATH=$(readlink -f /data/app/com.google.android.youtube*);
+	YTPATH=$(readlink -f /data/app/com.google.android.youtube*/lib | sed 's/\/lib//g');
 fi;
 
 # Find installed (active) YouTube versionCode
