@@ -4,13 +4,13 @@
 ## ipdev @ xda-developers
 
 ## Requires YouTube to be installed as a user app.
-## Required YouTube version is 15.33.34
+## Required YouTube version is 15.38.35
 
 # Module directory set by Magisk.
 MODDIR=${0%/*}
 
 # Required YT versionCode
-RVCODE=1514395072
+RVCODE=1515052480
 
 # Wait untill boot is compleate before moving on.
 while [ "$(getprop sys.boot_completed)" != 1 ];
@@ -42,5 +42,4 @@ else
 	else
 		su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
 	fi;
-	# su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
 fi;
