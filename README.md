@@ -25,8 +25,8 @@ See xda-developers post [Link](https://forum.xda-developers.com/showpost.php?p=8
 - Write up more detailed Instructions.
 
 ### Recent changes
-- Fix mounting for backwards compatibility.
 - Some minor cleanup.
+- Update to Vanced v15.38.35
 
 ---
 
@@ -48,4 +48,3 @@ _aapt cut grep sed zip_
 - The Android Community and everyone who has helped me learn through the years.
 - Team Vanced for [_YouTube Vanced Edition_](https://forum.xda-developers.com/android/apps-games/app-youtube-vanced-edition-t3758757) and the new root install method.
 - John Wu (@topjohnwu) for all things Magisk.
-
