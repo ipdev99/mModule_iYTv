@@ -25,8 +25,7 @@ See xda-developers post [Link](https://forum.xda-developers.com/showpost.php?p=8
 - Write up more detailed Instructions.
 
 ### Recent changes
-- Some minor cleanup.
-- Update to Vanced v15.38.35
+- Update to Vanced v15.40.37
 
 ---
 
