@@ -37,9 +37,5 @@ if [ ! -f $YTPATH/base.apk ]; then
 elif [ ! $YTVCODE = $RVCODE ]; then
 	echo "$(date '+%Y%m%d_%H%M')" "Wrong version of YouTube found." >>$MODDIR/error.log;
 else
-	if [ $SDK -ge 25 ]; then
-		su -c mount $MODDIR/base.apk $YTPATH/base.apk;
-	else
-		su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
-	fi;
+	su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
 fi;
