@@ -89,6 +89,7 @@ if [ -f black.apk ]; then
 	THEME="Black"
 	cp -rf META-INF "$SDIR"
 	cp customize.sh "$SDIR"
+	cp post-fs-data.sh "$SDIR"
 	cp service.sh "$SDIR"
 	cp black.apk "$SDIR"/base.apk
 	cd "$SDIR"
@@ -97,7 +98,7 @@ if [ -f black.apk ]; then
 	edit_service_script
 	ZIPNAME="$NAME"-"$THEME"-v"$VER".zip
 	IYTVB=""$OUT"/"$ZIPNAME""
-	zip -r "$ZIPNAME" META-INF/* base.apk customize.sh module.prop service.sh
+	zip -r "$ZIPNAME" META-INF/* base.apk customize.sh module.prop post-fs-data.sh service.sh
 	backup
 	mv "$ZIPNAME" "$OUT"
 	rm -rf *
@@ -110,6 +111,7 @@ if [ -f dark.apk ]; then
 	THEME="Dark"
 	cp -rf META-INF "$SDIR"
 	cp customize.sh "$SDIR"
+	cp post-fs-data.sh "$SDIR"
 	cp service.sh "$SDIR"
 	cp dark.apk "$SDIR"/base.apk
 	cd "$SDIR"
@@ -118,7 +120,7 @@ if [ -f dark.apk ]; then
 	edit_service_script
 	ZIPNAME="$NAME"-"$THEME"-v"$VER".zip
 	IYTVD=""$OUT"/"$ZIPNAME""
-	zip -r "$ZIPNAME" META-INF/* base.apk customize.sh module.prop service.sh
+	zip -r "$ZIPNAME" META-INF/* base.apk customize.sh module.prop post-fs-data.sh service.sh
 	backup
 	mv "$ZIPNAME" "$OUT"
 	rm -rf *
