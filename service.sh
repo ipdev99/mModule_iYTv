@@ -9,13 +9,11 @@
 # Module directory set by Magisk.
 MODDIR=${0%/*}
 
-# Required YT versionCode
-RVCODE=1515701696
+# Run mount.
+RUNMOUNT=TRUE
 
-# Wait untill boot is compleate before moving on.
-while [ "$(getprop sys.boot_completed)" != 1 ];
-do sleep 1;
-done;
+# Required YT versionCode.
+RVCODE=1515701696
 
 # Get SDK level and architecture.
 SDK=$(getprop ro.build.version.sdk);
@@ -28,14 +26,31 @@ else
 	YTPATH=$(readlink -f /data/app/com.google.android.youtube*/lib | sed 's/\/lib//g');
 fi;
 
-# Find installed (active) YouTube versionCode
-YTVCODE=$(dumpsys package com.google.android.youtube | grep versionCode | cut -f2 -d'=' | tr -d '\n' | cut -f1 -d' ')
-
-# Check YouTube path and versionCode.
+# Check YouTube path.
 if [ ! -f $YTPATH/base.apk ]; then
-	echo "$(date '+%Y%m%d_%H%M')" "No stock YouTube found." >>$MODDIR/error.log;
-elif [ ! $YTVCODE = $RVCODE ]; then
+	echo "$(date '+%Y%m%d_%H%M')" "No user installed YouTube path found." >>$MODDIR/error.log;
+	RUNMOUNT=ABORT;
+fi;
+
+# Find installed (active) YouTube versionCode.
+if [ $RUNMOUNT = TRUE ]; then
+	while [ -z $YTVCODE ]; do
+		YTVCODE=$(dumpsys package com.google.android.youtube | grep versionCode | cut -f2 -d'=' | tr -d '\n' | cut -f1 -d' ');
+		echo "$(date '+%Y%m%d_%H%M%S')" "YouTubeVersion" $YTVCODE >>$MODDIR/test.log;
+		sleep 1;
+	done;
+fi;
+
+# Check YouTube versionCode.
+if [ ! $YTVCODE = $RVCODE ]; then
 	echo "$(date '+%Y%m%d_%H%M')" "Wrong version of YouTube found." >>$MODDIR/error.log;
-else
+	RUNMOUNT=ABORT;
+elif [ -z $YTVCODE ]; then
+	echo "$(date '+%Y%m%d_%H%M')" "No user installed version of YouTube found." >>$MODDIR/error.log;
+	RUNMOUNT=ABORT;
+fi;
+
+# Mount Vanced if failsafe(s) pass.
+if [ $RUNMOUNT = TRUE ]; then
 	su -c mount -o bind $MODDIR/base.apk $YTPATH/base.apk;
 fi;
