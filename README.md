@@ -18,26 +18,21 @@ Available in the releases tab. [Link](https://github.com/ipdev99/mModule_iYTv/re
 - Reboot device.
 
 ### About
-This module is based on the new root install method by the Vanced team.  
-See xda-developers post [Link](https://forum.xda-developers.com/showpost.php?p=83318971&postcount=16371) for information.  
-
-### To Do
-- Write up more detailed Instructions.
+- Update this part later.
 
 ### Recent changes
+- Added a post-fs-data script to help improve compatibility
+- Rewrote the service script to hopefully improve compatibility
+- Add _How to_ wiki pages
 - Update to Vanced v15.40.37
 
 ---
 
-### Requirements to build
-- Linux or MacOS with build (command line) tools installed.  
-_aapt cut grep sed zip_  
+### How to
+- [Make the Module](https://github.com/ipdev99/mModule_iYTv/wiki/MakeModule)
+- [Install YouTube](https://github.com/ipdev99/mModule_iYTv/wiki/Install)
 
-### How to build
-**If you have git installed**
-- Run _git clone https://github.com/ipdev99/mModule_iYTv.git_
-- Run _mkiytv.sh_ to build
-- Zip file(s) will be in the out directory
+---
 
 ### Notes
 - Feel free to use, change, improve, adapt.
@@ -45,5 +40,5 @@ _aapt cut grep sed zip_
 
 ### Credits
 - The Android Community and everyone who has helped me learn through the years.
-- Team Vanced for [_YouTube Vanced Edition_](https://forum.xda-developers.com/android/apps-games/app-youtube-vanced-edition-t3758757) and the new root install method.
+- Team Vanced for all things Vanced.
 - John Wu (@topjohnwu) for all things Magisk.
