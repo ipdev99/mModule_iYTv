@@ -36,7 +36,6 @@ fi;
 if [ $RUNMOUNT = TRUE ]; then
 	while [ -z $YTVCODE ]; do
 		YTVCODE=$(dumpsys package com.google.android.youtube | grep versionCode | cut -f2 -d'=' | tr -d '\n' | cut -f1 -d' ');
-		echo "$(date '+%Y%m%d_%H%M%S')" "YouTubeVersion" $YTVCODE >>$MODDIR/test.log;
 		sleep 1;
 	done;
 fi;
