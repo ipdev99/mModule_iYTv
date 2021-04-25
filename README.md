@@ -21,10 +21,7 @@ Available in the releases tab. [Link](https://github.com/ipdev99/mModule_iYTv/re
 - Update this part later.
 
 ### Recent changes
-- Added a post-fs-data script to help improve compatibility
-- Rewrote the service script to hopefully improve compatibility
-- Add _How to_ wiki pages
-- Update to Vanced v15.40.37
+- Update to Vanced v16.14.34
 
 ---
 
