@@ -4,7 +4,7 @@
 ## ipdev @ xda-developers
 
 ## Requires YouTube to be installed as a user app.
-## Required YouTube version is 16.14.34
+## Required YouTube version is 16.16.38
 
 # Module directory set by Magisk.
 MODDIR=${0%/*}
@@ -13,7 +13,7 @@ MODDIR=${0%/*}
 RUNMOUNT=TRUE
 
 # Required YT versionCode.
-RVCODE=1520293312
+RVCODE=1520563648
 
 # Get SDK level and architecture.
 SDK=$(getprop ro.build.version.sdk);
