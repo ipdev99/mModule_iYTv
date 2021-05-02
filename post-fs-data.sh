@@ -12,14 +12,6 @@ MMDIR=${MDIR%/*}
 ADB=${MMDIR%/*}
 
 # Check and remove extra Vanced files.
-if [ -f $ADB/post-fs-data.d/vanced.sh ]; then
-	rm $ADB/post-fs-data.d/vanced.sh;
-fi;
-
-if [ -f $ADB/service.d/vanced.sh ]; then
-	rm $ADB/service.d/vanced.sh;
-fi;
-
-if [ -d $ADB/Vanced ]; then
-	rm -rf $ADB/Vanced;
-fi;
+[[ -f $ADB/post-fs-data.d/vanced.sh ]] && rm $ADB/post-fs-data.d/vanced.sh;
+[[ -f $ADB/service.d/vanced.sh ]] && rm $ADB/service.d/vanced.sh;
+[[ -d $ADB/Vanced ]] && rm -rf $ADB/Vanced;
