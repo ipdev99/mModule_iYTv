@@ -19,17 +19,8 @@ BUZD=NONE
 # Set main functions
 
 check_dir() {
-	if [ ! -d "$TDIR"/staging ]; then
-	mkdir "$TDIR"/staging
-	fi;
-
-	if [ ! -d "$TDIR"/out ]; then
-	mkdir "$TDIR"/out
-	fi;
-
-	if [ ! -d "$TDIR"/out/"$DATE" ]; then
-	mkdir "$TDIR"/out/"$DATE"
-	fi;
+	[[ ! -d $OUT ]] && mkdir -p $OUT;
+	[[ ! -d $SDIR ]] && mkdir -p $SDIR;
 }
 
 # Set additional functions
