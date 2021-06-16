@@ -21,7 +21,7 @@ Available in the releases tab. [Link](https://github.com/ipdev99/mModule_iYTv/re
 - Update this part later.
 
 ### Recent changes
-- Update to Vanced v16.14.34
+- Update to Vanced v16.20.35
 
 ---
 
