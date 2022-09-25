@@ -3,6 +3,14 @@
 **Magisk Module**  
 _Simple module that uses mount to replace installed regular YouTube with the Vanced version._
 
+---
+
+**This project has been moved.**<br>
+You can find the updated project in [mModule](https://github.com/mModule).<br>
+[Inject YouTube](https://github.com/mModule/iYT) - [Inject YouTube Music](https://github.com/mModule/iYTm)
+
+---
+
 ### Description
 This module will overlay the Vanced apk file over the regular YouTube apk file.  
 Requires regular Google YouTube to be installed as a _user_ app. Both versions need to match.  
